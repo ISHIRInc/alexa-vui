@@ -1,0 +1,37 @@
+.cls-chart{
+    width: inherit;
+    height: 400px;
+}
+
+.skill-container {
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    padding: 0 82px;
+  }
+  .skill-container .wrapper{
+    padding: 20px 10em;
+    background-color: transparent;
+    border-radius: 15px;
+    max-width: 1200px;
+    max-height: 400px;
+  }
+  .cls-hint{
+    padding: 0 25%;
+    display: flex;
+  }
+  .cls-hint > div:first-child{
+    flex: 8%;
+  }
+  .cls-hint > div:last-child{
+    flex: 92%;
+    line-height: 36px;
+    font-size: 20px;
+    color: #fff;
+  }
+  .cls-hint > div >img{
+    height: 30px;
+  }
+  #chart_test > div > div {
+    margin-left: 20%;
+}
