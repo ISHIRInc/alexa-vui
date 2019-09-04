@@ -1,9 +1,9 @@
 export class Constants {
     public static SOCKET_URL="wss://ffvjesm8eg.execute-api.us-east-1.amazonaws.com/prod"
     public static MOCK_DATA=[
-        ['work',     11],
-        ['eat',      2],
-        ['commute',  2],
+        ['Work',     11],
+        ['Eat',      2],
+        ['Commute',  2],
         ['watch tv', 2],
         ['sleep',    7]
     ]

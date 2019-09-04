@@ -19,6 +19,7 @@ export class SkillAndManipulationComponent implements OnInit,OnDestroy {
   chartdata=Constants.MOCK_DATA
   dataSchema:any
   options = {
+    legend: {  alignment: 'start', textColor: 'white',textStyle:{color:"white"} },
     titleTextStyle: {
         color: '#fff',
         fontSize:20,
@@ -30,7 +31,8 @@ export class SkillAndManipulationComponent implements OnInit,OnDestroy {
     height: 500,
     is3D: true,
     'backgroundColor': 'transparent',
-    tooltip: { trigger: 'both',selectionMode: 'multiple' }
+    tooltip: { trigger: 'both',selectionMode: 'multiple' },
+    chartArea:{left:"1px"}
   };
   constructor(
     private socketService:SocketService,
@@ -86,7 +88,7 @@ export class SkillAndManipulationComponent implements OnInit,OnDestroy {
       switch(x["activity"]){
         case "OpenManipulation":{
           let name=x["action"].toLowerCase()
-          let indx=this.chartdata.findIndex(x=>x[0]==name)
+          let indx=this.chartdata.findIndex(x=>x[0].toString().toLowerCase()==name)
           if(indx>-1)
             this.visibleToolTip(indx)
           break;
