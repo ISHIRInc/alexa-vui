@@ -4,8 +4,8 @@ export class Constants {
         ['Work',     11],
         ['Eat',      2],
         ['Commute',  2],
-        ['watch tv', 2],
-        ['sleep',    7]
+        ['Watch tv', 2],
+        ['Sleep',    7]
     ]
 }
 

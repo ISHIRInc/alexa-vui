@@ -10,6 +10,7 @@ import { FooterComponent } from './footer/footer.component';
 import { SkillAndManipulationComponent } from './views/skill-and-manipulation/skill-and-manipulation.component';
 import { AboutComponent } from './views/about/about.component';
 import {MatButtonModule} from '@angular/material/button';
+import { SummaryComponent } from './views/summary/summary.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {MatButtonModule} from '@angular/material/button';
     HeaderComponent,
     FooterComponent,
     SkillAndManipulationComponent,
-    AboutComponent
+    AboutComponent,
+    SummaryComponent
   ],
   imports: [
     // MatButtonModule,
