@@ -1,6 +1,9 @@
 .cls-header{
     text-align: center;
+    background: #666666;
+    padding: 0.5rem 1rem;
 }
 .cls-header > img{
     width: 300px;
 }
+.cls-header p {padding: 0.3125rem 0; color: #fff; margin: 0; font-size: 40px !important; line-height: 49px;}

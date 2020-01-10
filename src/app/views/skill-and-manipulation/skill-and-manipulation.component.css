@@ -7,14 +7,16 @@
     display: flex;
     flex-direction: column;
     border-radius: 5px;
-    padding: 0 82px;
+    /* padding: 0 82px; */
   }
   .skill-container .wrapper{
-    padding: 20px 10em;
+    /* padding: 20px 10em; */
     background-color: transparent;
     border-radius: 15px;
     max-width: 1200px;
-    max-height: 400px;
+	max-height: 400px;
+	width: 100%;
+	margin: 0 auto;
   }
   .cls-hint{
     padding: 0 25%;
@@ -46,7 +48,19 @@
 	margin: 0;
   text-align: left;
   font-size: 20px;
+  color: #666;
 	/* text-shadow: 1px 1px 1px rgba(255,255,255,0.8); */
+}
+.chart_title h2 {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 21px;
+	font-weight: bold;
+	text-align: center;
+	margin: 0 0 -50px 0;
+	padding: 30px 0 0 0;
+	position: relative;
+	z-index: 1;
+	color: #666;
 }
 .rw-sentence span{
 	/* color: #444; */
@@ -62,8 +76,8 @@
 	position: absolute;
 	opacity: 0;
 	overflow: hidden;
-	width: 100%;
-	color: #fff;
+	width: auto;
+	color: #666;
 }
 .rw-words-1 span{
 	animation: rotateWordsFirst 21s linear infinite 0s;
@@ -73,31 +87,31 @@
 }
 .rw-words span:nth-child(2) { 
 	animation-delay: 3s; 
-	color: #fff;
+	color: #666;
 }
 .rw-words span:nth-child(3) { 
 	animation-delay: 13s; 
-	color: #fff;	
+	color: #666;	
 }
 .rw-words span:nth-child(4) { 
 	animation-delay: 23s; 
-	color: #fff;
+	color: #666;
 }
 .rw-words span:nth-child(5) { 
 	animation-delay: 33s; 
-	color: #fff;
+	color: #666;
 }
 .rw-words span:nth-child(6) {  
 	animation-delay: 43s; 
-	color: #fff;
+	color: #666;
 }
 .rw-words span:nth-child(6) {  
 	animation-delay: 53s; 
-	color: #fff;
+	color: #666;
 }
 .rw-words span:nth-child(7) {  
 	animation-delay: 63s; 
-	color: #fff;
+	color: #666;
 }
 /* @keyframes rotateWordsFirst {
   0% { opacity: 1; animation-timing-function: ease-in; height: 0px; }
@@ -118,7 +132,7 @@
 	position: absolute;
 	opacity: 0;
 	overflow: hidden;
-	color: #fff;
+	color: #666;
 	-webkit-animation: rotateWord 21s linear infinite 0s;
 	-ms-animation: rotateWord 21s linear infinite 0s;
 	animation: rotateWord 21s linear infinite 0s;
@@ -127,37 +141,37 @@
     -webkit-animation-delay: 3s; 
 	-ms-animation-delay: 3s; 
 	animation-delay: 3s; 
-	color: #fff;
+	color: #666;
 }
 .rw-words-1 span:nth-child(3) { 
     -webkit-animation-delay: 6s; 
 	-ms-animation-delay: 6s; 
 	animation-delay: 6s; 
-	color: #fff;	
+	color: #666;	
 }
 .rw-words-1 span:nth-child(4) { 
     -webkit-animation-delay: 9s; 
 	-ms-animation-delay: 9s; 
 	animation-delay: 9s; 
-	color: #fff;
+	color: #666;
 }
 .rw-words-1 span:nth-child(5) { 
     -webkit-animation-delay: 12s; 
 	-ms-animation-delay: 12s; 
 	animation-delay: 12s; 
-	color: #fff;
+	color: #666;
 }
 .rw-words-1 span:nth-child(6) { 
     -webkit-animation-delay: 15s; 
 	-ms-animation-delay: 15s; 
 	animation-delay: 15s; 
-	color: #fff;
+	color: #666;
 }
 .rw-words-1 span:nth-child(7) { 
   -webkit-animation-delay: 18s; 
 -ms-animation-delay: 18s; 
 animation-delay: 18s; 
-color: #fff;
+color: #666;
 }
 @-webkit-keyframes rotateWord {
     0% { opacity: 0; }
