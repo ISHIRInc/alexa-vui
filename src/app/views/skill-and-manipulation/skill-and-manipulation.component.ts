@@ -4,6 +4,8 @@ import {Constants,VoiceMapper} from "../../global/Constants"
 import { ActivatedRoute, Router, NavigationEnd } from "@angular/router"
 import {Subscription} from "rxjs"
 import { GoogleChartComponent,ScriptLoaderService,GoogleChartPackagesHelper } from 'angular-google-charts';
+import { AuthService } from 'src/app/services/auth.service';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 @Component({
   selector: 'app-skill-and-manipulation',
@@ -12,6 +14,8 @@ import { GoogleChartComponent,ScriptLoaderService,GoogleChartPackagesHelper } fr
 })
 export class SkillAndManipulationComponent implements OnInit,OnDestroy {
   // @ViewChild("chart") chart:GoogleChartComponent
+  authenticated: boolean = true;
+  
   chart:any
   activeRoute:any
   subscriptions:Subscription[]=[]
@@ -38,7 +42,9 @@ export class SkillAndManipulationComponent implements OnInit,OnDestroy {
     private socketService:SocketService,
     private loaderService:ScriptLoaderService,
     private activatedRoute: ActivatedRoute,
-    private router:Router
+    private router:Router,
+    private authService: AuthService,
+    private ngxService: NgxUiLoaderService
   ) { 
     
     
@@ -115,6 +121,26 @@ export class SkillAndManipulationComponent implements OnInit,OnDestroy {
       }
   }
   ngOnInit() {
+    const token = localStorage.getItem("userToken");
+    if (token) {
+      this.ngxService.start();
+      this.authService.validateToken(token).subscribe(res => {
+        this.ngxService.stop();
+        console.log(res);
+        debugger;
+        if (res.success) {
+          this.authenticated = true;
+          this.router.navigateByUrl('/skill-manipulation');
+        } else {
+          this.authenticated = false;
+          location.href = "https://playground.eno8.com/";
+        }
+      });
+    } else {
+      this.authenticated = false;
+      location.href = "https://playground.eno8.com/";
+    }
+
     this.drawChart()
     
     this.activeRoute=this.activatedRoute.url["_value"][0]["path"]

@@ -1,38 +1,34 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-summary',
-  templateUrl: './summary.component.html',
-  styleUrls: ['./summary.component.css']
+  selector: 'app-auth',
+  templateUrl: './auth.component.html',
+  styleUrls: ['./auth.component.css']
 })
-export class SummaryComponent implements OnInit {
-  authenticated: boolean = true;
+export class AuthComponent implements OnInit {
 
-  constructor(private router: Router,
-    private authService: AuthService,
+  constructor(private authService: AuthService,
+    private router: Router,
     private ngxService: NgxUiLoaderService) { }
 
   ngOnInit() {
     const token = localStorage.getItem("userToken");
+    console.log("Token: ", token);
     if (token) {
       this.ngxService.start();
       this.authService.validateToken(token).subscribe(res => {
         this.ngxService.stop();
         console.log(res);
-        debugger;
         if (res.success) {
-          this.authenticated = true;
-          this.router.navigateByUrl('/tech-summary');
+          this.router.navigateByUrl('/skill-manipulation');
         } else {
-          this.authenticated = false;
           location.href = "https://playground.eno8.com/";
         }
       });
     } else {
-      this.authenticated = false;
       location.href = "https://playground.eno8.com/";
     }
   }

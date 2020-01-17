@@ -11,6 +11,9 @@ import { SkillAndManipulationComponent } from './views/skill-and-manipulation/sk
 import { AboutComponent } from './views/about/about.component';
 import {MatButtonModule} from '@angular/material/button';
 import { SummaryComponent } from './views/summary/summary.component';
+import { AuthComponent } from './auth/auth.component';
+import { NgxUiLoaderModule } from 'ngx-ui-loader';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,13 +22,16 @@ import { SummaryComponent } from './views/summary/summary.component';
     FooterComponent,
     SkillAndManipulationComponent,
     AboutComponent,
-    SummaryComponent
+    SummaryComponent,
+    AuthComponent
   ],
   imports: [
     // MatButtonModule,
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    NgxUiLoaderModule,
     GoogleChartsModule.forRoot()
   ],
   providers: [],

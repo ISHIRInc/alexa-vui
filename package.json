@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod --baseHref=/poc/vui/ --deployUrl=/poc/vui/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -24,6 +24,7 @@
     "@angular/router": "~7.0.0",
     "angular-google-charts": "^0.1.6",
     "core-js": "^2.5.4",
+    "ngx-ui-loader": "^7.2.1",
     "rxjs": "~6.3.3",
     "zone.js": "~0.8.26"
   },
